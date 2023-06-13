@@ -4,7 +4,6 @@ import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
 
-
 const List = () => {
   const columns = useSelector(state => state.columns);
 
@@ -22,7 +21,6 @@ const List = () => {
       </div>
 
       <ColumnForm />
-      {/* <ColumnForm handleSubmit={addColumn} /> */}
 
     </div>
   );

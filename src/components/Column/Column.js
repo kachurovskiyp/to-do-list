@@ -19,11 +19,9 @@ const Column = props => {
       <ul className={styles.cards}>
         {cards.map(card => <Card key={shortid()} id={card.id}>{card.title}</Card>)}
       </ul>
-      <CardForm columnId={props.id} handleSubmit={props.action} />
+      <CardForm columnId={props.id} />
     </article>
   );
 };
 
 export default Column;
-
-//<li key={card.id}>{card.title}</li>
