@@ -1,0 +1,34 @@
+@import '../../styles/settings.scss';
+
+.navbar {
+padding: 20px 0;
+background-color: $color-dark2;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  font-size: 30px;
+  color: $color-light;
+
+  margin-left: 20px;
+
+    &:visited {
+      color: $color-light;
+    }
+}
+
+.menu {
+  display: flex;
+  margin-right: 30px;
+
+  list-style: none;
+
+  & a {
+    font-size: 20px;
+    text-decoration: none;
+    color: $color-light;
+    margin-right: 15px;
+  }
+}
