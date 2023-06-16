@@ -10,6 +10,9 @@ import { createStore } from 'redux';
 export const getFilteredCards = ({ cards, search }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, search));
 
+export const getFavoriteCards = ({ cards }) => cards
+  .filter(card => card.isFavorite);
+
 export const getAllColumns = state => state.columns;
 
 export const getColumnsByList = ({ columns }, listId) => columns.filter(column => column.listId === listId);
@@ -23,9 +26,14 @@ export const getSearch = ({ search }) => search;
 //actions
 
 export const addList = payload => ({ type: 'ADD_LIST', payload });
+
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
+
 export const refreshSearch = payload => ({ type: 'REFRESH_SEARCH', payload });
+
+export const toggleFavorite = payload => ({ type: 'TOGGLE_FAVORITE', payload });
 
 ///
 
@@ -45,6 +53,9 @@ const reducer = (state, action) => {
 
     case 'REFRESH_SEARCH':
       return { ...state, search: action.payload }
+
+      case 'TOGGLE_FAVORITE':
+        return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
 
     default:
       return state;

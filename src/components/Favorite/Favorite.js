@@ -1,10 +1,11 @@
 import PageTitle from '../PageTitle/PageTitle';
+import ColumnFavorite from '../ColumnFavorite/ColumnFavorite';
 
 const Favorite = () => {
   return (
     <div>
       <PageTitle>favorite</PageTitle>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      <ColumnFavorite />
     </div>
   );
 };

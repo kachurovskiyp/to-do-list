@@ -11,3 +11,14 @@
     justify-content: space-between;
     font-weight: bold;
 }
+
+.favoriteBtn {
+    background-color: transparent;
+    border: none;
+
+    &.isFavorite {
+        & span {
+            color: $color-warning;
+        }
+    }
+}
