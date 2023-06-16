@@ -6,7 +6,7 @@ import Container from './components/Container/Container';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Favorite from './components/Favorite/Favorite';
-import NotFound from './components/NotFound/notFound';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
   return (

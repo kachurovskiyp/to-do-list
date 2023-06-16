@@ -30,5 +30,10 @@ background-color: $color-dark2;
     text-decoration: none;
     color: $color-light;
     margin-right: 15px;
+
+    &.linkActive {
+      color: $color-warning;
+    }
   }
 }
+
