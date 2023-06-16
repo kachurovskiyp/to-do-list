@@ -1,20 +1,28 @@
 import { useSelector } from 'react-redux';
+import { useParams, Navigate } from 'react-router-dom';
 
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
+import SearchForm from '../SearchForm/SearchForm';
 
-import { getAllColumns } from '../../redux/store';
+import { getColumnsByList, getListById } from '../../redux/store';
 
 const List = () => {
-  const columns = useSelector(state => getAllColumns(state));
+  const { listId } = useParams();
+
+  const columns = useSelector(state => getColumnsByList(state, listId));
+  const listData = useSelector(state => getListById(state, listId));
+
+  if(!listData) return <Navigate to='/' />
 
   return (
     <div>
       <header className={styles.header}>
-        <h2 className={styles.title}>Things to do <span>soon</span></h2>
-        <p className={styles.description}>Interesting things I want to check out</p>
+        <h2 className={styles.title}>{listData.title}<span>soon</span></h2>
+        <p className={styles.description}>{listData.description}</p>
       </header>
+      <SearchForm />
       <div className={styles.columns}>
         {columns.map(column => <Column
           key={column.id}
@@ -22,8 +30,7 @@ const List = () => {
         />)}
       </div>
 
-      <ColumnForm />
-
+      <ColumnForm listId={listId} />
     </div>
   );
 };

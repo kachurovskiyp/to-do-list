@@ -1,15 +1,13 @@
 import React from 'react';
 
 import Hero from '../Hero/Hero';
-import SearchForm from '../SearchForm/SearchForm';
-import List from '../List/List';
+import Lists from '../Lists/Lists';
 
 const Home = () => {
   return (
     <React.Fragment>
       <Hero />
-      <SearchForm />
-      <List />
+      <Lists />
     </React.Fragment>
   );
 };

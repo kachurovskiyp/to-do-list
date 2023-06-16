@@ -1,0 +1,19 @@
+.listForm {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.label {
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .listForm {
+    flex-direction: column;
+  }
+}
+
