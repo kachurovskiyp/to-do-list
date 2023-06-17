@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { refreshSearch, getSearch } from '../../redux/store';
+import { refreshSearch, getSearch } from '../../redux/searchRedux';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
